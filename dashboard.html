@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — Meridian Partners</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏢</text></svg>">
+</head>
+<body class="dashboard-page">
+    <!-- Top Navigation -->
+    <nav class="topnav">
+        <div class="topnav-inner">
+            <div class="topnav-brand">
+                <svg width="32" height="32" viewBox="0 0 48 48" fill="none">
+                    <rect width="48" height="48" rx="10" fill="#1a56db"/>
+                    <path d="M14 34V18l10-6 10 6v16" stroke="#fff" stroke-width="2.5" fill="none"/>
+                    <path d="M20 34v-8h8v8" stroke="#fff" stroke-width="2.5" fill="none"/>
+                    <circle cx="24" cy="22" r="2" fill="#fff"/>
+                </svg>
+                <span>Meridian Partners</span>
+            </div>
+            <div class="topnav-right">
+                <div class="topnav-user">
+                    <div class="user-avatar" id="user-avatar">JD</div>
+                    <span class="user-name" id="user-display-name">John Doe</span>
+                </div>
+                <button class="btn btn-outline btn-sm" id="logout-btn">Sign Out</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <div class="page-header-inner">
+                <div>
+                    <h1>Document Overview</h1>
+                    <p class="page-subtitle">Access your contracts, reports, and compliance documents</p>
+                </div>
+                <div class="header-stats">
+                    <div class="stat-card">
+                        <span class="stat-number">12</span>
+                        <span class="stat-label">Documents</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Pending</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-number">9</span>
+                        <span class="stat-label">Completed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Filters -->
+    <section class="filters-bar">
+        <div class="container">
+            <div class="filters-inner">
+                <div class="search-box">
+                    <svg class="search-icon" viewBox="0 0 20 20" fill="currentColor" width="18" height="18">
+                        <path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/>
+                    </svg>
+                    <input type="text" id="search-input" placeholder="Search documents...">
+                </div>
+                <div class="filter-group">
+                    <select id="filter-category" class="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="contract">Contracts</option>
+                        <option value="report">Reports</option>
+                        <option value="compliance">Compliance</option>
+                        <option value="invoice">Invoices</option>
+                    </select>
+                    <select id="filter-status" class="filter-select">
+                        <option value="all">All Statuses</option>
+                        <option value="completed">Completed</option>
+                        <option value="pending">Pending Review</option>
+                        <option value="draft">Draft</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document List -->
+    <main class="main-content">
+        <div class="container">
+            <div class="document-list" id="document-list">
+                <!-- Documents are inserted via JS -->
+            </div>
+            <div class="empty-state" id="empty-state" style="display:none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="64" height="64">
+                    <path d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/>
+                </svg>
+                <p>No documents match your search criteria.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-inner">
+                <p>&copy; 2026 Meridian Partners LLC &middot; All rights reserved</p>
+                <p class="footer-links">
+                    <a href="#">Privacy Policy</a> &middot;
+                    <a href="#">Terms of Service</a> &middot;
+                    <a href="mailto:support@meridianpartners.example.com">Contact Support</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Document Detail Modal -->
+    <div class="modal-overlay" id="modal-overlay">
+        <div class="modal" id="document-modal">
+            <div class="modal-header">
+                <h2 id="modal-title">Document Title</h2>
+                <button class="modal-close" id="modal-close" aria-label="Close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Filled via JS -->
+            </div>
+            <div class="modal-footer">
+                <!--
+                    =============================================
+                    PDF DOWNLOAD LINK — PLACEHOLDER
+                    Replace "documents/sample.pdf" with the path
+                    to your own PDF file.
+                    =============================================
+                -->
+                <a href="documents/sample.pdf" class="btn btn-primary" id="modal-download" download>
+                    <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" style="vertical-align: middle; margin-right: 6px;">
+                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                    </svg>
+                    Download PDF
+                </a>
+                <button class="btn btn-outline" id="modal-close-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
