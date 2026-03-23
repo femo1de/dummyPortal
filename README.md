@@ -37,5 +37,7 @@ If you want **different PDFs per document**, edit the `pdfPath` property for eac
 
 ## Credentials
 
-No real authentication — any non-empty username + password combination is accepted.  
+- **Username**: any non-empty value  
+- **Password**: `innovationhub`  
+
 Session state is stored in `sessionStorage` (cleared when the browser tab is closed).
