@@ -177,7 +177,8 @@ if (isLoginPage) {
         // Simulate network delay
         setTimeout(function () {
             // Accept any non-empty credentials for demo purposes
-            if (username.length > 0 && password.length > 0) {
+            // the password is hardcoded to "innovationhub" for a simple check
+            if (username.length > 0 && password === "innovationhub") {
                 sessionStorage.setItem("mp_authenticated", "true");
                 sessionStorage.setItem("mp_username", username);
                 window.location.href = "dashboard.html";
